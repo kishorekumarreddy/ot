@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions>  
+   <definition name="teacher_registration_page" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_registration_page.jsp" />  
+   </definition>  
+   
+    <definition name="teacher_details_page" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_details_page.jsp" />  
+   </definition>  
+   
+   <definition name="teacher_professinal_dtls_page" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_professinal_dtls_page.jsp" />  
+   </definition>  
+   
+   <definition name="teacher_reg_payment_dtls_page" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_reg_payment_dtls_page.jsp" />  
+   </definition>  
+   
+   <definition name="teacher_login" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_login.jsp" />  
+   </definition>  
+   
+  
+</tiles-definitions>

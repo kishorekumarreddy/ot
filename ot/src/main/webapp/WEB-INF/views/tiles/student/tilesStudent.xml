@@ -5,8 +5,15 @@
  
 <tiles-definitions>  
    <definition name="student_registration" extends="base-definition">  
-       <put-attribute name="title" value="Student Registration" />  
        <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_registration.jsp" />  
+   </definition>  
+   
+   <definition name="ot_starting_page" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_ot_starting_page.jsp" />  
+   </definition> 
+   
+   <definition name="student_login" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_login.jsp" />  
    </definition>  
   
 </tiles-definitions>

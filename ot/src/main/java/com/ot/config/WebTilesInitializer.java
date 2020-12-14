@@ -1,5 +1,4 @@
 package com.ot.config;
-
 public class WebTilesInitializer {
 	String[] tilesInitialzer = {
 			"/WEB-INF/views/**/tiles.xml",

@@ -19,5 +19,4 @@
    <definition name="student_login_page" extends="base-definition">  
        <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_login_page.jsp" />  
    </definition>  
-  
 </tiles-definitions>

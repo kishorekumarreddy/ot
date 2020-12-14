@@ -29,4 +29,11 @@ public class StudentController {
 		
 		return "student_login";
 	}
+	
+	@RequestMapping(value="/studentLogin2", method=RequestMethod.GET)
+	public String studentLogin1(HttpServletRequest req, HttpServletResponse resp, Model model) {
+		
+		return "student_login_page";
+	}
+	
 }

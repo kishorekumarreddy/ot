@@ -106,7 +106,7 @@
 			width: 380px;
 			height: 600px;
 			  
-	 }
+	 } 
 		
   </style>
 </head>

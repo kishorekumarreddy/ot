@@ -1,0 +1,25 @@
+
+.brand {
+    padding-left: 6px;
+}
+.sub-brand{
+	font-size:10px;
+	display:block;
+}  
+
+.brand svg {
+	animation:rotate 5s ease-out infinite ;
+	color:dodgerblue;
+}
+
+@keyframes rotate{
+	0%{
+		transform:rotate(0deg)
+	}
+	50%{
+		transform:rotate(180deg)
+	}
+	100%{
+		transform:rotate(0deg)
+	}
+}

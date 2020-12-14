@@ -19,7 +19,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String login() {
-		return "login"; 
+		return "student_login"; 
 	}
 	
 }

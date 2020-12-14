@@ -19,6 +19,8 @@
 		<!-- Font Styles -->
 		<link rel="stylesheet" href="${context}/resources/css/common/fontaswome/all.min.css" />
 		<script src="${context}/resources/js/common/fontaswome/all.min.js"></script>
+		
+		<link rel="stylesheet" href="${context}/resources/css/common/layout/layout.css" />
 	</head> 
 <body>
 

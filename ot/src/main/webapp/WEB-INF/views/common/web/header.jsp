@@ -3,7 +3,10 @@
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">OT</a>
+  <a class="navbar-brand" href="#">
+  	<span class="brand"><i class="fas fa-globe"></i> &nbsp;T</span>
+  	<span class="sub-brand">Online Tuition</span>
+  </a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

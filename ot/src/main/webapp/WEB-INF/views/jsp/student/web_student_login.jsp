@@ -13,9 +13,9 @@
       
        @media screen and (min-width: 400px) {
        
-          body {
+        /*   body {
            background-color: #0e1557;
-       }
+       } */
      }
   
 	  *{
@@ -25,7 +25,7 @@
            }
      .d-form{
             text-align: center;
-            position: absolute;
+           /*  position: absolute; */
             background:#0e1557;
             padding: 0 20px;
             

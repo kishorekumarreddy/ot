@@ -5,7 +5,7 @@
  
 <tiles-definitions>  
    <definition name="teacher_registration_page" extends="base-definition">  
-       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_registration_page.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_reg_basic_dtls_page.jsp" />  
    </definition>  
    
     <definition name="teacher_details_page" extends="base-definition">  

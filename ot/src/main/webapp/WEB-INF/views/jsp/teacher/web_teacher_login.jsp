@@ -4,125 +4,161 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>    
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-  <style>
-      
-       @media screen and (min-width: 400px) {
+ <style>
+   @media screen and (min-width: 400px) {
        
           body {
-           background-color: #0e1557;
+           background:#e9ebee;
        }
      }
   
 	  *{
-	         /*  box-shadow: none; */
 	          autolone:none;
               box-sizing:border-box;
            }
-     .d-form{
-            text-align: center;
-            position: absolute;
-            background:#0e1557;
-            padding: 0 20px;
-            
-            
-     }
-     .sub-titel{
-            padding: 5px;
-            background: #fff;
-            font-size: 20px;
-            color: #0e1557;
-            width:300px;
-            margin-left: 595px;
-            border-radius: 16px;
-     }
-     .d-head{
-           color: #fff;
-     }
-     .button{
-	 
-	          margin-top: 50px;
-	 }
-	  .input{
-	       
-	       margin: 10px 0;
-	       background: transparent;
-	       border: 0;
-	       font-size: 17px;
-	       border-bottom: 2px solid #c5ecfd;
-	       padding: 25px 25px 0px 0px;
-	       outline: none;
-	       width: 500px;
-	       color: #c5ecfd;
-	 }
-	  
-     .login{
-			  border-radius: 6px;
-			  width: 500px;
-			  font-size: 20px;
-			  padding: 12px;
-			  outline: none;
-			  margin-top: 8px;
-			  background-color: #35afb0;
-			  color: #fafafc;
-			  cursor: pointer;
-			  border-radius: 26px;
-			}
-	 .clickHere{
-			  width: 500px;
-			  padding: 12px;
-			  outline: none;
-			  margin-top: 8px;
-			  color: #fafafc;
-			  cursor: pointer;
-			  border-radius: 26px;
-			}		
-			
-	.tag{
-	         display: inline;
-	         margin-right: 75px;
-	}		
-  </style>
-</head>
-<body>
+  .main-div{
+          display: flex;
+		  flex-flow: wrap;
+		  align-items: center;
+		  justify-content: center ;
+		  background:#c7c7c7; 
+          font-family: sans-serif;
+          height: 600px;
+}
+.container{
+		  margin: auto;
+		  padding: 20px;
+}
+.login{
+		  float:left;
+		  background-color: #fafafa;
+		  border-radius: 10px;
+		  text-align: center;
+		  padding-top: 100px;
+		  width:350px;
+          z-index: 1;
+          position: absolute;
+          margin-left: 350px;
+}
+.register{
+         dispaly:inline-block;
+	     background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	     border-radius: 10px;
+	     color:#fff;
+	     text-align: left;
+	     width: 75%;
+	     height:400px;
+	     animation: background 6s ease infinite;
+	     background-size: 200% 200%; 
+		  
+ }
+.loginId{
+	    width: 80%;
+	    padding: 10px;
+	    margin-bottom: 30px;
+	    border: none;
+	    background-color: #eeeeef;
+	    outline: none;
+}
+.password{
+        width: 80%;
+	    padding: 10px;
+	    margin-bottom: 30px;
+	    border: none;
+	    outline: none;
+	    background-color: #eeeeef;
+}
+.loginBtn{
+	    width: 80%;
+	    margin: 30px 0;
+	    padding: 10px;
+	    border: none;
+        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	    color: #fff;
+	    font-size: 20px;
+	    cursor: pointer;
+	    border: none;
+	    outline: none;
+	    border-radius: 5px;
+	    animation: background 6s ease infinite;
+	    background-size: 200% 200%; 
+ }   
+.registerBtn{
+	    background-color: transparent;
+	    border: 1px solid #FFF;
+	    border-radius: 5px;
+	    padding: 10px 20px;
+	    color: #fff;
+	    font-size: 20px;
+}
+.registerBtn:hover{
+	    color: dodgerblue;
+	    background: #FFF;
+	    cursor: pointer;
+	    outline: none;
+}
+.regDiv{
+        padding-left:100px;
+}     
+h1{
+        margin-bottom: 40px;
+        font-size: 40px;
+}
+.dontAct{
+        font-size: 20px;
+        padding-top:60px;
+        margin-left: 90px;
+}
+p{
+
+       padding-top: 90px;
+       padding-left: 110px;
+}
+ @keyframes background { 
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}	
+
+</style>
+
  <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
        
-       <div class="d-form">
-	      <div class="d-body">
-	        <div class=""> </div>	
-	          <div class="d-head">
-	             <h1>Teacher Login</h1>
-	          </div>
-	          <span class=""></span>
-		       <div class="input-fields">
-		         <div class="tag">
-		          <input type="text" class="loginId input" id="loginId" placeholder="Login Id"/>
-		         </div>
-		         <div class="tag">
-		          <input type="password" class="Password input" id="Password" placeholder="Password" />
-		         </div>
-		         <div class="tag">  
-		           <div class="note">Forgot Password?</div>
-		         </div>
-		       <div class="button" >
-				      <button class="login " id="login"><span>Login</span></button>
-		       </div>
-		       <div>
-		          <div>Don't have an account? <span class="clickHere">Click Here</span></div>
-		       </div>
-	       </div>
-       </div>
-    </div>   
-    <script>
+    <div class="main-div">
+      <div class="register">
+          <div class="container">
+              <div class="dontAct">Don't have an account ?</div>
+              <span class="line"></span>
+              <p>Register to here...</p>
+              <div class="regDiv">
+              <button class="registerBtn">REGISTER <!-- <i class="fas fa-arrow-circle-right"></i> --></button>
+              </div>
+          </div>
+      </div> 
+      <div class="login">
+         <div class="container">
+              <h1>Log in</h1>
+              <input type="text" class="loginId" id="loginId" placeholder="Login Id" />
+              <input type="password" class="password" id="password" placeholder="Password" /><br>
+              <a href="#">Forgot password?</a>
+              <button class="loginBtn">log in</button>
+         </div>
+      </div> 
+    </div>
+    <script> 
 			var contextPath="${contextPath}";
 			var obj={};
 		     $(document).ready(function(){
 		    	 
-		    	 $(".login").click(function(){
+		    	 $(".registerBtn").click(function(){
 		    		 
 		    		 window.location=contextPath+"/teacher/teacherReg";
 		    		 
@@ -137,5 +173,3 @@
 		     });
 		     
 		</script> 
-</body>
-</html>

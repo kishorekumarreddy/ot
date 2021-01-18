@@ -4,176 +4,112 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>    
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
   <style>
     
-    @media screen and (min-width: 600px) {
-  body {
-           background-color: #0e1557;
-       }
-     }
-  
-	  *{
-	           box-shadow: none; 
-	          /* autolone:none; */
-              box-sizing: border-box;
-           }
-           
-     .d-form{
-	            text-align: center;
-	            position: absolute;
-	            background:#0e1557;
-	            padding: 0 20px;
-            
-     }
-     .sub-titel{
-	            padding: 5px;
-	            background: #fff;
-	            font-size: 20px;
-	            color: #0e1557;
-	            width:300px;
-	            margin-left: 595px;
-	            border-radius: 16px;
-     }
-     .d-head{
-                color: #fff;
-     }
-     .button{
-	 
-	           margin-top: 50px;
+.input{
+	       margin: 10px 0;
+	       background: transparent;
+	       border: 0;
+	       font-size: 17px;
+	       border-bottom: 2px solid #c5ecfd;
+	       padding: 20px 20px 0px 0px;
+	       outline: none;
+	       width: 100%;
 	 }
-	  .input{
-		       margin: 10px 0;
-		       background: transparent;
-		       border: 0;
-		       font-size: 17px;
-		       border-bottom: 2px solid #c5ecfd;
-		       padding: 25px 25px 0px 0px;
-		       outline: none;
-		       width: 500px;
-		       color: #c5ecfd;
-	 }
-	 
-	 .note{
-	          color: #b8af14;
-	          margin-left: 450px;
-	 }
-	 
-	 .previous {
-	          border-radius: 6px;
-			  width: 500px;
-			  font-size: 20px;
-			  padding: 12px;
-			  margin-top: 8px;
-			  background-color: #b8af14;
-			  color: #fafafc;
-			  cursor: pointer;
-	          border-radius: 26px;
-	 }
-	 .subjectSpecialization{
-	          margin-left: -78px;
-	 }
-	  
-     .next{
-			  border-radius: 6px;
-			  width: 500px;
-			  font-size: 20px;
-			  padding: 12px;
-			  margin-top: 8px;
-			  background-color: #35afb0;
-			  color: #fafafc;
-			  cursor: pointer;
-			  border-radius: 26px;
-			}
-     .tag{
-	         display: inline;
-	         margin-right: 75px;
-	       }	
+.adderssforCommunication {
+           padding: 0px;
+           margin: 0px;
+           resize:none;
+           height: 56px;
+         }			
+.err-msg{
+	       text-align: center;
+	       color:#c70f02;
+	       background-color: #fff;
+	}	
+.btn{
+		   width:100px;
+	}	
 	      			
   </style>
-</head>
-<body>
+
  <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
-       
-       <div class="d-form">
-	      <div class="d-body">
-	        <div class=""> </div>
-	          <div class="d-head">
-	             <h1>Teacher Registration</h1>
-	          </div>
-	          <span class=""></span>
-	          <div class="sub-titel">Enter Professional Details </div>
-		       <div class="input-fields">
-		         <div class="tag">
-		           <input type="text" class="subject input" id="subject" placeholder="Subject"/>
-		         </div>
-		         <div class="tag" >
-		           <input type="text" class="aboutSubject input" id="aboutSubject" placeholder="About Subject" />
-		         </div>
-		         <div class="tag">  
-		           <div class="note">Please write about you which will be appear in your Profile in pic..</div>
-		         </div>
-		         <div class="tag" >
-			          <select class="subjectSpecialization input" id="subjectSpecialization">
-			               <option class="subSpl" >Subject Specialization</option>
-			               <option>Mathematic</option>
-			               <option>Science</option>
-			               <option>EVS</option>
-			               <option>Social</option>
+ <div class="err-msg text-center"> </div>
+ <div class="card">
+    <div class="card-header header-bg">
+       <h2 class="text-left">Teacher Registration</h2>
+    </div>
+    <div class="card-body">
+         <h4 class="card-titel text-center">Enter Professional Details </h4>
+         <div class="row">
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <input type="text" class="subject input" id="subject" placeholder="Subject"/>
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <input type="text" class="aboutSubject input" id="aboutSubject" placeholder="About Subject" />
+	          	     
+	          	</div>
+	          	<!-- <p class="note">Please write about you which will be appear in your Profile in pic..</p> -->
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <select class="subjectSpecialization input" id="subjectSpecialization">
+			               <option value="-1" >Subject Specialization</option>
+			               <option value="1">Mathematics</option>
+			               <option value="2">Science</option>
+			               <option value="3">EVS</option>
+			               <option value="4">Social</option>
 			          </select>
-		         </div>
-		         <div class="tag" >  
-			          <select class="syllabusSpecialization input" id="syllabusSpecialization">
-			               <option >Syllabus Specialization</option>
-			               <option>CBSE</option>
-			               <option>ICSE</option>
-			               <option>IB</option>
-			               <option>STATE BOARD</option>
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <select class="syllabusSpecialization input" id="syllabusSpecialization">
+			               <option value="-1">Syllabus Specialization</option>
+			               <option value="1">CBSE</option>
+			               <option value="2">ICSE</option>
+			               <option value="3">IB</option>
+			               <option value="4">STATE BOARD</option>
 			          </select>
-		        </div>
-		        <div class="tag">  
-		          <input type="text" class="nameofTheState input" id="nameofTheState" placeholder="Name of The State" />
-		        </div>
-		        <div class="tag">   
-		          <select class="schoolMedium input" id="schoolMedium">
-		               <option>School Medium</option>
-		               <option>English</option>
-		               <option>Hindi</option>
-		               <option>Telugu</option>
-		               <option>Tamil</option>
-		               <option>Kannada</option>
-		               <option>Malayali</option>
-		               <option>Marati</option>
-		               <option>Urdu</option>
-		               <option>Gujarathi</option>
-		               <option>Konkini</option>
-		               <option>Bengali</option>
-		               <option>Panjabi</option>
-		               <option>Odia</option>
-		               <option>Assamase</option>
-		               <option>Kashmiri</option>
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <input type="text" class="nameofTheState input" id="nameofTheState" placeholder="Name of The State" />
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <select class="schoolMedium input" id="schoolMedium">
+		               <option value="-1">School Medium</option>
+		               <option value="1">English</option>
+		               <option value="2">Hindi</option>
+		               <option value="3">Telugu</option>
+		               <option value="4">Tamil</option>
+		               <option value="5">Kannada</option>
+		               <option value="6">Malayali</option>
+		               <option value="7">Marati</option>
+		               <option value="8">Urdu</option>
+		               <option value="9">Gujarathi</option>
+		               <option value="10">Konkini</option>
+		               <option value="11">Bengali</option>
+		               <option value="12">Panjabi</option>
+		               <option value="13">Odia</option>
+		               <option value="14">Assamase</option>
+		               <option value="14">Kashmiri</option>
 		           </select>
-		        </div>
-		        <div class="tag"> 
-		          <input type="text" class="typeTheLanguage input" id="typeTheLanguage" placeholder="Type The Language" />
-		        </div>
-		        <div class="tag">
-		          <input type="text" class="classCanBeHandle input" id="classCanBeHandle" placeholder="Class Can Be Handle" />
-		        </div>
-		        <div class="tag">
-		          <textarea  type="text" class="adderssforCommunication input" id="adderssforCommunication" placeholder="Adderss for Communication"></textarea>
-		        </div> 
-		       <div class="button" >
-		              <button class="previous " id="previous"><span>Previous</span></button>
-				      <button class="next " id="next"><span>Next</span></button>
-		       </div>
-	       </div>
-	     </div>  
-       </div>
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <input type="text" class="typeTheLanguage input" id="typeTheLanguage" placeholder="Type The Language" />
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <input type="text" class="classCanBeHandle input" id="classCanBeHandle" placeholder="Class Can Be Handle" />
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	          	     <textarea  type="text" class="adderssforCommunication input" id="adderssforCommunication" placeholder="Adderss for Communication"></textarea>
+	          	</div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+	     </div>
+    </div>
+         <div class="card-footer text-right">
+	        <button class="back btn btn-dark" id="back"><span>Back</span></button>
+		    <button class="next btn btn-primary" id="next"><span>Next</span></button>
+	   </div>
+ </div>
        <script>
 			var contextPath="${contextPath}";
 			var obj={};
@@ -184,7 +120,7 @@
 		    		 window.location=contextPath+"/teacher/teacherDtls";
 		    		 
 		    	 });
-                 $(".previous").click(function(){
+                 $(".back").click(function(){
 		    		 
 		    		 window.location=contextPath+"/teacher/teacherReg";
 		    		 
@@ -232,5 +168,3 @@
 		    	  return flag; */
 		     }
 		</script>
-</body>
-</html>

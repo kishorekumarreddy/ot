@@ -1,25 +1,77 @@
 
+.container-fluid{
+	padding:0px;
+	margin:0px;
+	width:100%;
+}
 .brand {
-    padding-left: 6px;
+           padding-left: 6px;
 }
 .sub-brand{
-	font-size:10px;
-	display:block;
+			font-size:10px;
+			display:block;
 }  
 
 .brand svg {
-	animation:rotate 5s ease-out infinite ;
-	color:dodgerblue;
+			animation:rotate 5s ease-out infinite ;
+			color:dodgerblue;
 }
+
+.loader{
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background:rgba(0,0,0,0.35);
+	cursor:not-allowed;
+	display:none;
+	z-index:9999;
+}
+.loader-icon{
+	background: url(../../../images/icons/loader.gif) no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px !important;
+    background-size: contain;
+    border-radius: 10px;
+}
+
 
 @keyframes rotate{
 	0%{
-		transform:rotate(0deg)
+		   transform:rotate(0deg)
 	}
 	50%{
-		transform:rotate(180deg)
+		   transform:rotate(180deg)
 	}
 	100%{
-		transform:rotate(0deg)
+		   transform:rotate(0deg)
 	}
 }
+
+/* header background */
+.header-bg{
+		   background-color: #28328c;
+		   color: white;
+}
+.input{
+	       margin: 10px 0;
+	       background: transparent;
+	       border: 0;
+	       font-size: 17px;
+	       border-bottom: 2px solid #8b7682;
+	       padding: 20px 20px 0px 0px;
+	       outline: none;
+	       width: 100%;
+ }
+ 
+select option[value="-1"] {
+           color: #999999;
+}
+::-webkit-input-placeholder { 
+           color: black;
+}
+

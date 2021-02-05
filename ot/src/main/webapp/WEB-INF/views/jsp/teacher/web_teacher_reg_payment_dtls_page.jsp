@@ -46,19 +46,19 @@
            <h4 class="card-titel text-center">Enter Payment Details  </h4>
          <div class="row">
 	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-	          	     <input type="text" class="accountNumber input" id="accountNumber" placeholder="Account Number"/>
+	          	     <input type="text" class="accountNo input" id="accountNo" placeholder="Account Number"/>
 	          	</div>
 	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-	          	     <input type="text" class="iFSCCode input" id="iFSCCode" placeholder="IFSC Code" />
+	          	     <input type="text" class="ifscCode input" id="ifscCode" placeholder="IFSC Code" />
 	          	</div>
 	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-	          	     <input type="text" class="gPayNumber input" id="gPayNumber" placeholder="GPay Number" />
+	          	     <input type="text" class="gpayNo input" id="gpayNo" placeholder="GPay Number" />
 	          	</div>
 	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-	          	     <input type="text" class="phonePayNumber input" id="phonePayNumber" placeholder="Phone Pay Number" />
+	          	     <input type="text" class="phonePayNo input" id="phonePayNo" placeholder="Phone Pay Number" />
 	          	</div>
 	          	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-	          	     <input type="text" class="paytmNumber input" id="paytmNumber" placeholder="Paytm Number" />
+	          	     <input type="text" class="paytmNo input" id="paytmNo" placeholder="Paytm Number" />
 	          	</div>
 	    </div>      	
       </div>
@@ -68,15 +68,43 @@
       </div>
   </div>
         <script>
-			var contextPath="${contextPath}";
-			var obj={};
-		     $(document).ready(function(){
-		    	 
-		    	 $(".back").click(function(){
-		    		 
-		    		 window.location=contextPath+"/teacher/teacherDtls";
-		    		 
-		    	 });
+		    	 var contextPath="${contextPath}";
+
+		    	    $(document).ready(function(){
+		    	   	 
+		    	   	
+		    	    $(".back").click(function(){
+		    	             	 $(".loader").show();
+		    	             	window.location=contextPath+"/teacher/teacherDtls";
+		    	   	 });
+		    	              $(".confirmToRegister").click(function(){ 
+		    	             	 $(".loader").show();
+		    				               $.ajax({
+		    				    			url:contextPath+"/teacher/",
+		    				    		    type:"POST",
+		    				    		    data:{"dataObj":JSON.stringify(prepareObj())},
+		    				    		    success:function(response){
+		    				    		    	 //$(".loader").hide();
+		    				    		    	 window.location=contextPath+"/teacher/";
+		    				    		    },
+		    				    		    error:function(error){
+		    				    		    	alert("Error::"+JSON.stringify(error));
+		    				    		    	 $(".loader").hide();
+		    				    			 }
+		    	            		 });
+		    	              });
+		    	    });
+		    	      function prepareObj(){
+		    	     	 var obj = {};
+		    	     	 	 obj.accountNo	      =     $.trim($("#accountNo").val());
+		    	     	 	 obj.ifscCode	 	  =     $.trim($("#ifscCode").val());
+		    	     	 	 obj.gpayNo	 	      =     $.trim($("#gpayNo").val());
+		    	     	 	 obj.phonePayNo	      = 	$.trim($("#phonePayNo").val());
+		    	     	 	 obj.paytmNo	 	  =     $.trim($("#paytmNo").val());
+		    	     	 	
+		    	     	 	
+		    	     	 return obj;
+		    	      } 
 		    	 
 		    	/*  $(".confirmToRegister").click(function(){
 		    		 obj.loginId=$("#loginId").val();
@@ -99,7 +127,7 @@
 		    		 
 		    		 window.location=contextPath+"/login/loginScreen";
 		    		 }
-		    	 }); */
+		    	 }); 
 		     });
 		     function validations(){
 		    	 /*  var flag = true;
@@ -117,6 +145,6 @@
 		              flag = false;
 		              return false;
 		            }
-		    	  return flag; */
-		     }
+		    	  return flag; 
+		     }*/
 </script>

@@ -7,7 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -20,10 +22,10 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @ComponentScan(basePackages="com.ot")
 @EnableWebMvc
 //@PropertySource(value = { "classpath:db-config.properties" })
-@PropertySources({
-    @PropertySource("classpath:db-config.properties")
-    //@PropertySource("classpath:db.properties")
-})
+//@PropertySources({
+//    @PropertySource("classpath:db-config.properties")
+//    @PropertySource("classpath:db.properties")
+//})
 public class MvcConfiguration extends WebMvcConfigurerAdapter{
     @Value("${driver_class_name}")
     private String driverClassName;
@@ -90,6 +92,16 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 	    return dataSource;
 	 }
 
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer properties() {
+        PropertySourcesPlaceholderConfigurer props = new PropertySourcesPlaceholderConfigurer();
+        props.setLocations(new Resource[] {
+                new ClassPathResource("../../WEB-INF/config/db-config.properties")
+              //  new ClassPathResource("version.properties")
+        });
+		return props;
+    }
+    
     
 	
 }

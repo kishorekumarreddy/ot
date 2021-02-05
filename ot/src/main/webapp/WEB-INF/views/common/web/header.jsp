@@ -1,30 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a href="#" class="navbar-brand">
+	    <span class="brand"><i class="fas fa-globe"></i> &nbsp;T</span>
+	  	<span class="sub-brand">Online Tuition</span>
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">
-  	<span class="brand"><i class="fas fa-globe"></i> &nbsp;T</span>
-  	<span class="sub-brand">Online Tuition</span>
-  </a>
-
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact US</a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="#" class="nav-item nav-link active" id="home">Home</a>
+            <a href="#" class="nav-item nav-link">About US</a>
+            <a href="#" class="nav-item nav-link">Contact US</a>
+        </div>
+        <div class="navbar-nav">
+            <a href="#" class="nav-item nav-link"  id="logout">Logout</a>
+        </div>
+    </div>
 </nav>
+
+
+<script>
+	$(document).ready(function(){
+		$(document).on('click','#home',function(){
+			$(".loader").show();
+			window.location = contextPath+"/login/dashboard";
+		});
+		$(document).on('click','#logout',function(){
+			$(".loader").show();
+			window.location = contextPath+"/teacher/teacherLogin";
+		});
+	});
+</script>

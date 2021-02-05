@@ -24,22 +24,50 @@ public class TeacherController {
 	@Resource(name="teacherValidator")
 	TeacherValidator teacherValidator;
 	
+	/*
+	 * @RequestMapping(value="/teacherLogin", method=RequestMethod.GET) public
+	 * String teacherLogin(HttpServletRequest req, HttpServletResponse resp, Model
+	 * model) {
+	 * 
+	 * return "teacher_login"; }
+	 */
+	
 	@RequestMapping(value="/teacherLogin", method=RequestMethod.GET)
-	public String teacherLogin(HttpServletRequest req, HttpServletResponse resp, Model model) {
+	public String teacherLoginV1(HttpServletRequest req, HttpServletResponse resp, Model model) {
 		
-		return "teacher_login";
+		return "teacher_login_v1";
 	}
+	
+	@RequestMapping(value="/teacherRegInitial", method=RequestMethod.GET)
+	public String teacherInitialRegistration(HttpServletRequest req, HttpServletResponse resp, Model model) {
+		
+		return "teacher_initial_registration";
+	}
+	@RequestMapping(value="teacherRegInitialSaving", method=RequestMethod.POST)
+	  public @ResponseBody String teacherRegInitialSaving(HttpServletRequest req, HttpServletResponse resp)throws JSONException{
+	  
+	  String dataObj = req.getParameter("dataObj");
+	  
+	  org.json.JSONObject obj = new org.json.JSONObject(dataObj);
+	  
+	  System.out.println("=======>"+obj);
+	  
+	  teacherServiceImpl.teacherRegInitialSaving(teacherValidator.validateAndPrepareTeacherInitDtlsObject(obj));
+	  
+	  return "Saved Success";
+	  }
+	
+	
+	
+	
 	
 	@RequestMapping(value="/teacherReg", method=RequestMethod.GET)
 	public String teacherRegistration(HttpServletRequest req, HttpServletResponse resp, Model model) {
 		
 		return "teacher_registration_page";
 	}
-	
-	
 	  @RequestMapping(value="saveTeacherRegDtls", method=RequestMethod.POST)
-	  public @ResponseBody String teacherRegistrationSaving(HttpServletRequest req
-	  , HttpServletResponse resp)throws JSONException{
+	  public @ResponseBody String teacherRegistrationSaving(HttpServletRequest req, HttpServletResponse resp)throws JSONException{
 	  
 	  String dataObj = req.getParameter("dataObj");
 	  
@@ -49,8 +77,10 @@ public class TeacherController {
 	  
 	  teacherServiceImpl.teacherRegistrationSaving(teacherValidator.validateAndPrepareTeacherRegistrationObject(obj));
 	  
-	  return "Saved Success"; }
+	  return "Saved Success";
+	  }
 	 
+	  
 		 
 	@RequestMapping(value="/teacherDtls", method=RequestMethod.GET)
 	public String teacherDtls(HttpServletRequest req, HttpServletResponse resp, Model model) {
@@ -64,13 +94,22 @@ public class TeacherController {
 		return "teacher_professinal_dtls_page";
 	}
 	
+	
+	
 	@RequestMapping(value="/teacherPay", method=RequestMethod.GET)
 	public String teacherPay(HttpServletRequest req, HttpServletResponse resp, Model model) {
 		
 		return "teacher_reg_payment_dtls_page";
 	}
 	
-   
+//	@RequestMapping(value="saveTeacherPaymentDtls", method=RequestMethod.POST)
+//	public @ResponseBody String teacherPaymentDtlsSaving(HttpServletRequest req, HttpServletResponse resp)throws JSONException{
+//		  String dataObj = req.getParameter("dataObj");
+//		  org.json.JSONObject obj = new org.json.JSONObject(dataObj);
+//		  System.out.println("=======>"+obj); 
+//		  teacherServiceImpl.teacherPaymentDtlsSaving(teacherValidator.validateAndPrepareTeacherPaymentDtlsObject(obj));
+//		  return "Saved Success";
+//	}
 	
 	
 }

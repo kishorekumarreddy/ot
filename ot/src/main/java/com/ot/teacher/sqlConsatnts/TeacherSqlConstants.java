@@ -39,6 +39,100 @@ public interface TeacherSqlConstants {
 					" :monFeeExpctnsPerStudentMstId, :noStudentHandleMstId, "+
 					" :loginId, :loginTranId )";
 			 		// APPSQLConstants._INSERT_AUDIT_COLUMN_PARAM + ")"; 
+	 
+	 public static final String OT_TEACHER_INIT_REG_TRAN_SEQ = "ot_teacher_init_reg_tran_seq";
+	 
+	 public static final String _INS__OT_TEACHER_INIT_REG_TRAN =  
+				" INSERT INTO ot_teacher_init_reg_tran("+
+					" ot_teacher_init_reg_tran_id, name, "+
+					" email_id, mobile, "+
+					" from_place, login_id, "+
+					" password, created_dt, record_status )"+
+				" Values("+
+					" :otTeacherInitRegTranId, :name, "+
+					" :emailId, :mobile, "+
+					" :fromPlace, :loginId, "+
+					" :password, :createdDt, :recordStatus )";
+	  
+	  
+	  
+
+	 public static final String _INS__OT_TEACHER_PAYMENT_ACCOUNT_DTLS_TRAN =  
+				" INSERT INTO ot_teacher_payment_account_dtls_tran("+
+					" ot_teacher_payment_account_dtls_tran_id, ot_teacher_reg_tran_id, "+
+					" account_no, ifsc_code, "+
+					" gpay_no, phone_pay_no, "+
+					" paytm_no, login_id, "+
+					" login_tran_id "+
+			 		// APPSQLConstants._INSERT_AUDIT_COLUMN + ")" +
+				" Values("+
+					" :otTeacherPaymentAccountDtlsTranId, :otTeacherRegTranId, "+
+					" :accountNo, :ifscCode, "+
+					" :gpayNo, :phonePayNo, "+
+					" :paytmNo, :loginId, "+
+					" :loginTranId ";
+			 	//	 APPSQLConstants._INSERT_AUDIT_COLUMN_PARAM + ")";
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static final String SELECT_TEACHER_REG_TRAN_QUERY= 
 				    " select  ot_teacher_reg_tran_id, full_name_of_the_teacher, mobile_no, email_id,"

@@ -16,8 +16,33 @@
        <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_login.jsp" />  
    </definition>
    
+   <definition name="student_login_v1" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_login_v1.jsp" />  
+   </definition>
+   
+   <definition name="student_initial_registration" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_initial_registration.jsp" />  
+   </definition>  
+   
+   <definition name="student_initial_registration_v1" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_initial_registration_v1.jsp" />  
+   </definition>  
+   
    <definition name="online_tuition" extends="base-definition">  
        <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_online_tuition.jsp" />  
    </definition>  
+   
+    <definition name="student_dashboard" extends="layout-defination"> 
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_student_dashboard.jsp" />  
+   </definition>
+     
+   <definition name="ot_list_courses" extends="layout-defination"> 
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_ot_list_courses.jsp" />  
+   </definition>  
+   
+    <definition name="ot_list_instructors" extends="layout-defination"> 
+       <put-attribute name="body" value="/WEB-INF/views/jsp/student/web_ot_list_instructors.jsp" />  
+   </definition>  
+   
   
 </tiles-definitions>

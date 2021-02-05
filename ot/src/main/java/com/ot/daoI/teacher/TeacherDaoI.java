@@ -5,12 +5,18 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.ot.modal.teacher.OtTeacherInitRegTran;
+import com.ot.modal.teacher.OtTeacherPaymentAccountDtlsTran;
 import com.ot.modal.teacher.OtTeacherRegTran;
 
 public interface TeacherDaoI {
      
 	  
 	public void teacherRegistrationSaving(OtTeacherRegTran otTeacherRegTran)throws JSONException; 
+	
+	public void teacherPaymentDtlsSaving(OtTeacherPaymentAccountDtlsTran otTeacherPaymentAccountDtlsTran) throws JSONException;
+	
+	public void teacherRegInitialSaving(OtTeacherInitRegTran otTeacherInitRegTran)  throws JSONException;
 	
 	public int teacherRegistrationUpdate(JSONObject obj)throws JSONException;
 	
@@ -25,4 +31,8 @@ public interface TeacherDaoI {
 	public boolean checkDuplicateTeacherEmailId(String emailId)throws JSONException;
 
 	public List<net.sf.json.JSONObject> getEduMst();
+
+	
+
+	
 }

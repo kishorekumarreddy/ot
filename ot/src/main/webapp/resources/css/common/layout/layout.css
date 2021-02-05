@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Condensed:wght@300&display=swap');
 
+*{
+	/* font-family: 'Poppins', sans-serif; */
+	font-family: 'Roboto Condensed', sans-serif;
+	transition:all 0.5s;
+}
+.pr{
+	position:relative;
+}
 .container-fluid{
 	padding:0px;
 	margin:0px;
 	width:100%;
+	background: #c7c7c7;      
+  	background-position:center;
+  	background-size:cover;
 }
+/* .layout-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+} */
 .brand {
            padding-left: 6px;
 }
@@ -15,6 +34,56 @@
 .brand svg {
 			animation:rotate 5s ease-out infinite ;
 			color:dodgerblue;
+}
+
+.note-msgs {
+  	background: aliceblue;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    z-index: 9999;
+    display:none;
+}
+
+span.closeIcon {
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    cursor:pointer;
+}
+
+.msgs {
+    display: none;
+    font-size:12px;
+}
+.errMsg.msgs {
+    color: red;
+}
+.errMsg.msgs .lbl {
+    color: #b03305;
+}
+
+span.note-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+}
+.msgs .lbl{
+	margin:0px 5px 0px 0px;
+	font-size:10px;
+}
+.infoMsg.msgs {
+    color: #058282;
+}
+.warningMsg.msgs {
+    color: #ff8000;
+}
+.font-weight-600{
+    font-weight: 600 !important;
+}
+.font-size-larger{
+    font-size: larger;
 }
 
 .loader{
@@ -39,6 +108,19 @@
     border-radius: 10px;
 }
 
+.teacher-img{
+	background: url(../../../images/teacher.jpg) no-repeat;
+    background-size: contain;
+}
+.student-img{
+	background: url(../../../images/student.jpg) no-repeat;
+    background-size: contain;
+}
+
+/* .box{
+	box-shadow:0 0 15px rgba(4,42,142,0.25);
+	border:none;
+} */
 
 @keyframes rotate{
 	0%{
@@ -54,18 +136,21 @@
 
 /* header background */
 .header-bg{
-		   background-color: #28328c;
-		   color: white;
+		     background-color: #28328c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(3 11 124 / 40%);
 }
 .input{
-	       margin: 10px 0;
-	       background: transparent;
-	       border: 0;
-	       font-size: 17px;
-	       border-bottom: 2px solid #8b7682;
-	       padding: 20px 20px 0px 0px;
-	       outline: none;
-	       width: 100%;
+      margin: 10px 0;
+      background: transparent;
+      border: 0;
+      font-size: 17px;
+      border-bottom: 1px solid #8b7682;
+      padding: 20px 20px 0px 0px;
+      outline: none;
+      width: 100%;
  }
  
 select option[value="-1"] {
@@ -73,5 +158,51 @@ select option[value="-1"] {
 }
 ::-webkit-input-placeholder { 
            color: black;
+}
+
+#footer{ 
+	background: #f3f3f3;
+}
+
+/* !-- Student Dashborad CSS--> */
+.d-flex .fb30{
+	flex-basis:30%;
+}
+
+.d-flex .fb70{
+	flex-basis:70%;
+}
+.fee {
+    font-size: 14px;
+    font-weight: normal;
+}
+.fw700{
+	font-weight:700;
+}
+
+.btn{
+	min-width:100px;
+}
+
+
+.person-exp,.slot-time{
+	color: #777;
+}
+
+.person-img svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.search-box, .box{
+	padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 25%);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
 }
 

@@ -3,32 +3,9 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>    
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-  <style>
-.input{
-	       margin: 10px 0;
-	       background: transparent;
-	       border: 0;
-	       font-size: 17px;
-	       border-bottom: 2px solid #c5ecfd;
-	       padding: 20px 20px 0px 0px;
-	       outline: none;
-	       width: 100%;
-	 }
-	
-.err-msg{
-	       color:#c70f02;
-	       background-color: #fff;
-	}	
-.btn{
-		   width:100px;
-	}
-  </style>
-
- <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
  <div class="err-msg text-center"> </div>
-<div class="card">
+ <div class="page">
+	<div class="card">
 	   <div class="card-header header-bg">
 	        <h2 class="text-left">Teacher Registration</h2>
 	   </div>
@@ -126,6 +103,7 @@
 	        <button class="back btn btn-dark" id="back">Back</button>
 		    <button class="next btn btn-primary" id="next">Next</button>
 	   </div>
+	</div>
 </div>
 <script> 
 var contextPath="${contextPath}";
@@ -137,7 +115,7 @@ var contextPath="${contextPath}";
    		 window.location=contextPath+"/teacher/teacherPro";
    		 
    	 }); */
-              $(".back").click(function(){
+    $(".back").click(function(){
              	 $(".loader").show();
    		 window.location=contextPath+"/teacher/teacherLogin";
    	 });
@@ -157,11 +135,19 @@ var contextPath="${contextPath}";
 			    			 }
             		 });
               });
-   	
     });
       function prepareObj(){
      	 var obj1 = {};
-     	 	obj1.fullNameOfTheTeacher	=	$.trim($("#fullNameOfTheTeacher").val());	
+     	 	obj1.fullNameOfTheTeacher	 =	 $.trim($("#fullNameOfTheTeacher").val());
+     	 	obj1.mobileNo	 	         =   $.trim($("#mobileNo").val());
+     	 	obj1.emailId	 	         =   $.trim($("#emailId").val());
+     	 	obj1.currentLocation	     = 	 $.trim($("#currentLocation").val());
+     	 	obj1.state	 	             =   $.trim($("#state").val());
+     	 	obj1.qualification	 	     =   $.trim($("#qualification").val());
+     	 	obj1.passedOutYear	 	     =   $.trim($("#passedOutYear").val());
+     	 	obj1.university	 			 =	 $.trim($("#university").val());
+     	 	obj1.experience	 			 =	 $.trim($("#experience").val());
+     	 	obj1.totalYearofExperience	 =	 $.trim($("#totalYearofExperience").val());
      	 	
      	 return obj1;
       }
@@ -177,6 +163,9 @@ var contextPath="${contextPath}";
    		 obj.university               =    $("#university").val();
    		 obj.experience               =    $("#experience").val();
    		 obj.totalYearofExperience    =    $("#totalYearofExperience").val();
+   		 
+   		 
+   		
    		 
    		 
    		  /* alert(JSON.stringify(obj));  

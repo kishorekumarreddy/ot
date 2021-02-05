@@ -50,7 +50,7 @@
 			      </select>
           	</div>
           	<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-		         	          <select class="nameOfTheState input" id="nameOfTheState">
+		         	       <select class="nameOfTheState input" id="nameOfTheState">
 			               <option value="-1">Name Of The State</option>
 			               <option value="1">Andhra Pradesh</option>
 			               <option value="2">Assam</option>

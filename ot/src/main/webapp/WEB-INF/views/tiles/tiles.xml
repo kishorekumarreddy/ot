@@ -6,14 +6,25 @@
 <tiles-definitions>  
   
    <!-- Base Definition -->
-   <definition name="base-definition" template="/WEB-INF/views/layout/web/layout.jsp">  
+   <definition name="layout-defination" template="/WEB-INF/views/layout/web/layout.jsp">  
        <put-attribute name="title" value="OT-Online Tutions" />  
        <put-attribute name="header" value="/WEB-INF/views/common/web/header.jsp" />  
-       <!-- <put-attribute name="menu" value="/WEB-INF/views/common/sidemenu.jsp" /> -->  
+       <put-attribute name="noteMsg" value="/WEB-INF/views/common/web/note_msg.jsp" />  
+       <!-- <put-attribute name="sidemenu" value="/WEB-INF/views/common/web/sidemenu.jsp" />   -->
        <put-attribute name="body" value="" />  
        <put-attribute name="footer" value="/WEB-INF/views/common/web/footer.jsp" />  
    </definition>  
   
+    <!-- Base Definition -->
+   <definition name="base-definition" template="/WEB-INF/views/layout/web/init_layout.jsp">  
+       <put-attribute name="title" value="OT-Online Tutions" />  
+       <put-attribute name="header" value="/WEB-INF/views/common/web/init_header.jsp" />  
+       <put-attribute name="noteMsg" value="/WEB-INF/views/common/web/note_msg.jsp" />  
+       <!-- <put-attribute name="menu" value="/WEB-INF/views/common/sidemenu.jsp" /> -->  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/common/web/footer.jsp" />  
+   </definition>  
+   
    <!-- Home Page -->
    <definition name="login" extends="base-definition">  
        <put-attribute name="title" value="Welcome To OT" />  
@@ -25,5 +36,13 @@
        <put-attribute name="title" value="Contact Us" />  
        <put-attribute name="body" value="/WEB-INF/views/common/web/contactus.jsp" />  
    </definition>  
+   
+   <!-- OT Front Page -->
+     <definition name="front_page" extends="base-definition">  
+       <put-attribute name="title" value="OT Front Page" />  
+       <put-attribute name="body" value="/WEB-INF/views/common/web/front_page.jsp" />  
+   </definition>  
+  
+  
   
 </tiles-definitions>

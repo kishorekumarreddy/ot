@@ -11,10 +11,13 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ot.daoI.teacher.TeacherDaoI;
+import com.ot.modal.teacher.OtTeacherInitRegTran;
+import com.ot.modal.teacher.OtTeacherPaymentAccountDtlsTran;
 import com.ot.modal.teacher.OtTeacherRegTran;
 import com.ot.teacher.sqlConsatnts.TeacherSqlConstants;
 
@@ -48,6 +51,46 @@ public class TeacherDao implements TeacherDaoI {
 
 		
 	}
+	
+	@Override
+	public void teacherPaymentDtlsSaving(OtTeacherPaymentAccountDtlsTran otTeacherPaymentAccountDtlsTran)
+			throws JSONException {
+		// TODO Auto-generated method stub
+		namedParameterJdbcTemplate.update(
+				 TeacherSqlConstants._INS__OT_TEACHER_PAYMENT_ACCOUNT_DTLS_TRAN,
+				new BeanPropertySqlParameterSource(otTeacherPaymentAccountDtlsTran));
+	}
+	@Override
+	public void teacherRegInitialSaving(OtTeacherInitRegTran otTeacherInitRegTran) throws JSONException {
+		// TODO Auto-generated method stub
+		String query = TeacherSqlConstants._INS__OT_TEACHER_INIT_REG_TRAN;
+		otTeacherInitRegTran.setOtTeacherInitRegTranId(getSequenceValue(TeacherSqlConstants.OT_TEACHER_INIT_REG_TRAN_SEQ, namedParameterJdbcTemplate));
+		namedParameterJdbcTemplate.update(
+				query,
+				new BeanPropertySqlParameterSource(otTeacherInitRegTran));
+	}
+	
+	public Integer getSequenceValue(String sequence, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+		String query = "SELECT NEXTVAL(:sequence)";
+		MapSqlParameterSource paramMap = new MapSqlParameterSource(); 
+		paramMap.addValue("sequence", sequence);
+		return  namedParameterJdbcTemplate.queryForObject(query, paramMap, Integer.class);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override	
 	public int teacherRegistrationUpdate(JSONObject obj) throws JSONException {
@@ -104,6 +147,11 @@ public class TeacherDao implements TeacherDaoI {
 				}
 			});
 	}
+
+	
+
+	
+	
      
 	/*
 	 * @Autowired private NamedParameterJdbcTemplate namedParameterJdbcTemplate;

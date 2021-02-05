@@ -3,8 +3,12 @@ package com.ot.daoI.student;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.ot.modal.student.OtStudentInitRegTran;
+
 public interface StudentDaoI {
    
-	 public void studentRegistrationSaving(JSONObject obj)throws JSONException; 
+
+	public void studentRegInitialSaving(OtStudentInitRegTran otStudentInitRegTran)throws JSONException ;
+
 	
 }

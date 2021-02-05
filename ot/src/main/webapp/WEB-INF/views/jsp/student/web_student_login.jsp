@@ -4,154 +4,54 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>    
 
 <title>Insert title here</title>
-  <style>
-   @media screen and (min-width: 400px) {
-       
-          body {
-           background:#e9ebee;
-       }
+ <style>
+ .login-card{
+          z-index: 111;
+          position:absolute;
+          border-radius: 10px;
+          width: 350px;
+          height: 400px;	
+          
      }
-  
-	  *{
-	          autolone:none;
-              box-sizing:border-box;
-           }
-  .main-div{
-          display: flex;
-		  flex-flow: wrap;
-		  align-items: center;
-		  justify-content: center ;
-		  background:#c7c7c7; 
-          font-family: sans-serif;
-          height: 600px;
-}
-.container{
-		  margin: auto;
-		  padding: 20px;
-}
-.login{
-		  float:left;
-		  background-color: #fafafa;
-		  border-radius: 10px;
-		  text-align: center;
-		  padding-top: 100px;
-		  width:350px;
-          z-index: 1;
-          position: absolute;
-          margin-left: 350px;
-}
-.register{
-         dispaly:inline-block;
-	     background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+.reg-card{
+         display: block;
+         position: relative;
+	     background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 	     border-radius: 10px;
-	     color:#fff;
-	     text-align: left;
-	     width: 75%;
-	     height:400px;
-	     animation: background 6s ease infinite;
-	     background-size: 200% 200%; 
- }
-.loginId{
-	    width: 80%;
-	    padding: 10px;
-	    margin-bottom: 30px;
-	    border: none;
-	    background-color: #eeeeef;
-	    outline: none;
-}
-.password{
-        width: 80%;
-	    padding: 10px;
-	    margin-bottom: 30px;
-	    border: none;
-	    outline: none;
-	    background-color: #eeeeef;
-}
-.loginBtn{
-	    width: 80%;
-	    margin: 30px 0;
-	    padding: 10px;
-	    border: none;
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-	    color: #fff;
-	    font-size: 20px;
-	    cursor: pointer;
-	    border: none;
-	    outline: none;
-	    border-radius: 5px;
-	    animation: background 6s ease infinite;
-	    background-size: 200% 200%; 
- }   
-.registerBtn{
-	    background-color: transparent;
-	    border: 1px solid #FFF;
-	    border-radius: 5px;
-	    padding: 10px 20px;
-	    color: #fff;
-	    font-size: 20px;
-}
-.registerBtn:hover{
-	    color: dodgerblue;
-	    background: #FFF;
-	    cursor: pointer;
-	    outline: none;
-}
-.regDiv{
-        padding-left:100px;
-}     
-h1{
-        margin-bottom: 40px;
-        font-size: 40px;
-}
-.dontAct{
-        font-size: 20px;
-        padding-top:60px;
-        margin-left: 90px;
-}
-p{
-
-       padding-top: 90px;
-       padding-left: 110px;
-}
-@keyframes background { 
-  0% {
-    background-position: 0% 50%;
-  }
-  
-  50% {
-    background-position: 100% 50%;
-  }
-  
-  100% {
-    background-position: 0% 50%;
-  }
-}	
-
+	     height: 350px;
+	     margin-top: 30px;
+	     width: 100%;
+     }
+     
 </style>
 
- <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
-       
-    <div class="main-div">
-      <div class="register">
-          <div class="container">
-              <div class="dontAct">Don't have an account ?</div>
-              <span class="line"></span>
-              <p>Register to here...</p>
-              <div class="regDiv">
-              <button class="registerBtn">REGISTER <!-- <i class="fas fa-arrow-circle-right"></i> --></button>
-              </div>
-          </div>
-      </div> 
-      <div class="login">
-         <div class="container">
-              <h1>Log in</h1>
-              <input type="text" class="loginId" id="loginId" placeholder="Login Id" />
-              <input type="password" class="password" id="password" placeholder="Password" /><br>
-              <a href="#">Forgot password?</a>
-              <button class="loginBtn">log in</button>
-         </div>
-      </div> 
-    </div>
+ <div class="page p-5">
+   <div class="row">
+	 <div class="container">
+		<div class="card-deck"> 
+		  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6  ">
+			 <div class="card">
+		        <div class=" reg-card">
+		            <p class="card-text">Don't have an account ?</p>
+		            <p>Register to here...</p>
+		            <button class="btn btn-dark registerBtn">REGISTER <i class="fas fa-arrow-circle-right"></i></button>
+		         </div>
+	           </div> 
+		       <div class="ol-sm-12 col-md-6 col-lg-6 col-xl-6">
+		         <div class=" text-center login-card bg-success">
+		              <h1 class="card-title">Log in</h1>
+		              <input type="text" class="loginId input" id="loginId" placeholder="Login Id" />
+		              <input type="password" class="password input" id="password" placeholder="Password" /><br>
+		              <a href="#">Forgot password?</a>
+		              <button class="btn btn-primary loginBtn">log in</button>
+		            </div>
+		          </div> 
+		       </div>  
+	       </div>   
+		</div>
+	 </div>
+ </div>
+ 	 
    <script>
 			var contextPath="${contextPath}";
 			var obj={};
@@ -164,7 +64,7 @@ p{
 		    	 });
                  $(".registerBtn").click(function(){
 		    		 
-		    		 window.location=contextPath+"/student/studentReg";
+		    		 window.location=contextPath+"/student/studentRegInitial";
 		    		 
 		    	 });
 		    	 

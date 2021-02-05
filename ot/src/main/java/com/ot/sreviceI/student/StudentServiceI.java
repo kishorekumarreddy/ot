@@ -1,9 +1,11 @@
 package com.ot.sreviceI.student;
 
-import org.json.JSONObject;
+import java.util.Map;
+
 
 public interface StudentServiceI {
 
-	public void studentRegistrationSaving(JSONObject obj);
+
+	public void studentRegInitialSaving(Map<String, Object> mapObj);
 	 
 }

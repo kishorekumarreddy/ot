@@ -9,6 +9,8 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import com.ot.daoI.teacher.TeacherDaoI;
+import com.ot.modal.teacher.OtTeacherInitRegTran;
+import com.ot.modal.teacher.OtTeacherPaymentAccountDtlsTran;
 import com.ot.modal.teacher.OtTeacherRegTran;
 import com.ot.serviceI.teacher.TeacherServiceI;
 
@@ -30,59 +32,42 @@ public class TeacherService implements TeacherServiceI {
 	}
 
 	@Override
-	public int teacherRegistrationUpdate(JSONObject obj) {
-		teacherDaoI.teacherRegistrationUpdate(obj);
-		return 0;
+	public void teacherPaymentDtlsSaving(Map<String, Object> mapObj) {
+		// TODO Auto-generated method stub
+		
+		OtTeacherPaymentAccountDtlsTran otTeacherPaymentAccountDtlsTran = null; 
+		otTeacherPaymentAccountDtlsTran =(OtTeacherPaymentAccountDtlsTran) mapObj.get("teacherPaymentObj");
+		
+		
+		teacherDaoI.teacherPaymentDtlsSaving(otTeacherPaymentAccountDtlsTran);
 	}
-
 	@Override
-	public void teacherRegistrationView(JSONObject obj) {
-		teacherDaoI.teacherRegistrationView(obj);
+	public void teacherRegInitialSaving(Map<String, Object> mapObj) {
+		// TODO Auto-generated method stub
+		OtTeacherInitRegTran OtTeacherInitRegTran = null; 
+		OtTeacherInitRegTran =(OtTeacherInitRegTran) mapObj.get("teacherInitObj");
+		
+		
+		teacherDaoI.teacherRegInitialSaving(OtTeacherInitRegTran);
+
 		
 	}
-    
-
-	@Override
-	public void teacherRegistrationDelete(JSONObject obj) {
-		teacherDaoI.teacherRegistrationDelete(obj);
-		
-	}
-	
-	public TeacherDaoI getLoginId(){
-        return this.teacherDaoI;
-    }
-	public void setLoginId(TeacherDaoI teacherDaoI) {
-		this.teacherDaoI = teacherDaoI;
-	}
-	@Override
-	public boolean isValidUser(String loginId, String password)throws Exception {
-		return teacherDaoI.isValidUser(loginId, password);
-	}
-	
-	
-	
-	public TeacherDaoI getMobileNum(){
-        return this.teacherDaoI;
-    }
-	public void setMobileNum(TeacherDaoI teacherDaoI) {
-		this.teacherDaoI = teacherDaoI;
-	}
-	@Override
-	public boolean checkDuplicateTeacherMobileNum(String mobileNum)throws Exception {
-		return teacherDaoI.checkDuplicateTeacherMobileNum(mobileNum);
-	}
-	
 	
 	
 	@Override
-	public boolean checkDuplicateTeacherEmailId(String emailId)throws Exception {
-		return teacherDaoI.checkDuplicateTeacherEmailId(emailId);
+	public void getEduMst() {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<net.sf.json.JSONObject> getEduMst() {
-		return teacherDaoI.getEduMst();
+	public void teacherProfessinolDtlsSaving(Map<String, Object> mapObj) {
+		// TODO Auto-generated method stub
+		
 	}
+
+	
+
+	
     
 }

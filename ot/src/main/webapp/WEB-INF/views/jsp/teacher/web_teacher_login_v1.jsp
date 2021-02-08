@@ -57,7 +57,7 @@
      <div class="card-columns d-flex justify-content-center align-items-center">
       <div class="card reg-card">
          	<div class="card-body text-center">
-        		<p class="card-text font-italic font-weight-600 mt-5 font-size-larger">Don't have an account ?</p>
+        		<p class="card-text font-italic font-weight-600 mt-5 font-size-larger " > Don't have an account ?</p>
 	        	<div class="reg-bottom">
 		            <p class="card-text reg-here">Register here...</p>
 		            <button class="btn btn-dark registerBtn">REGISTER <i class="fas fa-arrow-circle-right"></i></button>

@@ -94,6 +94,18 @@ public class TeacherController {
 		return "teacher_professinal_dtls_page";
 	}
 	
+	@RequestMapping(value="/teacherDashboard", method=RequestMethod.GET)
+	public String teacherDashboard(HttpServletRequest req, HttpServletResponse resp, Model model) {
+		
+		return "teacher_dashboard";
+	}
+	
+	@RequestMapping(value="/otListOfStudents", method=RequestMethod.GET)
+	public String otListOfStudents(HttpServletRequest req, HttpServletResponse resp, Model model) {
+		
+		return "ot_list_of_students";
+	}
+	
 	
 	
 	@RequestMapping(value="/teacherPay", method=RequestMethod.GET)

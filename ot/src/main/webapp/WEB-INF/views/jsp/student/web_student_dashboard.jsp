@@ -28,6 +28,8 @@
 		 cursor: pointer;
 		 transition-duration: .5s;
 		 color: #9c771c;
+		     width: auto !important;
+    min-width: auto !important;
 }
 .btn-1:hover{
 		 transform: scale(1.2);
@@ -35,11 +37,15 @@
 		 color: #DB6B13;
 	}
 .pro-card {
-	     width: 170px;
-	     padding: 15px;
-	     border: 1px solid;
-	     border-radius: 8px;
-	     margin-left: 32px;
+	        width: 170px;
+	    padding: 15px;
+	    border: 1px solid;
+	    border-radius: 50%;
+	    margin-left: 32px;
+	    position: absolute;
+	    background: #fff;
+	    top: -85px;
+	    left: 54px;
 } 	
 .btn-icon{
   		 margin: 12px;
@@ -48,16 +54,45 @@
          background: linear-gradient(to right, #434343 0%, black 100%); 
 }
 
+#stu-info label{
+	display:inline-block;
+    width: 120px;
+    border-right: 1px dashed #999;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+.card.mt-5.pt-5::after {
+    position: absolute;
+    content: "";
+    top: -1px;
+    border-left: 100px solid #c7c7c7;
+    border-top: 100px solid transparent;
+    transform: rotate(90deg);
+    z-index: 0;
+    left: -28px;
+}
+.card.mt-5.pt-5::before {
+   position: absolute;
+    content: "";
+    top: -5px;
+    border-left: 100px solid #c7c7c7;
+    border-top: 100px solid transparent;
+    transform: rotate(180deg);
+    z-index: 0;
+    right: -21px;
+}
+
 
 </style>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="card">
+            <div class="card mt-5 pt-5" style="padding-top: 100px !important; margin-top: 100px !important;">
                 <div class="card-body">
 	                <div class="text-center pro-card">
-			            <span class="iconSpan"><i class="fas fa-user-graduate fa-9x "></i></span>
+			            <span class="iconSpan"><i class="fas fa-user-graduate fa-8x "></i></span>
 		            </div>
 		            <div class="btn-icon text-center">
 		               <span class="m-1 ">
@@ -70,24 +105,30 @@
 		                   <button class="btn btn-1">Logout</button>
 		               </span>
 		            </div>
-		            <form action="action_page.php">
+		            <form action="stu-info" id="stu-info">
 						  <div class="list-item">
-						    <label for="name">Name :</label>
+						    <label for="name">Name </label>
+						    <span>K Ksihore Kumar Reddy</span>
 						  </div>
 						  <div class="list-item">
-						    <label for="name">Date :</label>
+						    <label for="name">DOB </label>
+						    <span>28 Nov, 2000</span>
 						  </div>
 						  <div class="list-item">
-						    <label for="name">age :</label>
+						    <label for="name">Age </label>
+						    <span>12Y</span>
 						  </div>
 						  <div class="list-item">
-						    <label for="name">Education :</label>
+						    <label for="name">Education </label>
+						    <span>10th</span>
 						  </div>
 						  <div class="list-item">
-						    <label for="name">Date of Enrollment :</label>
+						    <label for="name">Date of Enrollment </label>
+						    <span>10 Jan, 2021</span> 
 						  </div>
 						  <div class="list-item">
-						    <label for="name">Net fee Date :</label>
+						    <label for="name">Next fee Date </label>
+						    <span> 10 Mar, 2021</span>
 						  </div>
 				   </form>
                 </div>

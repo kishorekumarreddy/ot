@@ -34,7 +34,13 @@
    
     <definition name="teacher_dashboard" extends="layout-defination">  
        <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_teacher_dashboard.jsp" />  
-   </definition>  
+   </definition> 
+   
+   <definition name="ot_list_of_students" extends="layout-defination">  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/teacher/web_ot_list_of_students.jsp" />  
+   </definition> 
+   
+     
    
   
 </tiles-definitions>

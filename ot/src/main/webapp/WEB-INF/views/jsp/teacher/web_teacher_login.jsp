@@ -163,9 +163,9 @@ p{
 		    		 window.location=contextPath+"/teacher/teacherReg";
 		    		 
 		    	 });
-                 $(".clickHere").click(function(){
+                 $(".loginBtn").click(function(){
 		    		 
-		    		 window.location=contextPath+"/teacher/teacherReg";
+		    		 window.location=contextPath+"/teacher/teacherDashboard";
 		    		 
 		    	 });
 		    	 
